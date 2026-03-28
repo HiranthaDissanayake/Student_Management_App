@@ -1,12 +1,12 @@
 class Student {
-  final int? id; // '?' දැමීමෙන් මෙය null විය හැකි බව පවසයි
+  final int? id; 
   final String name;
   final int age;
   final String studentId;
   final String phone;
 
   Student({
-    this.id, // required නැත
+    this.id, 
     required this.name,
     required this.age,
     required this.studentId,
@@ -25,7 +25,7 @@ class Student {
 
   Map<String, dynamic> toJson() {
     return {
-      if (id != null) "id": id, // id එක තිබේ නම් පමණක් JSON එකට එකතු කරයි
+      if (id != null) "id": id, 
       "name": name,
       "age": age,
       "studentId": studentId,
