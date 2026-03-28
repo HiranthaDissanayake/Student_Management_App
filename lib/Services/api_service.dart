@@ -43,4 +43,37 @@ class ApiService {
       return false; // Connection error එකකදී false ලබා දෙයි
     }
   }
+
+
+  static Future<bool> updateStudent(Student student) async{
+    try{
+      final response = await http.put(
+        Uri.parse('$baseUrl/updateuser'),
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode(student.toJson())
+      );
+      return response.statusCode == 200;
+    }catch (e){
+      print("Update error: $e");
+      return false;
+    }
+  }
+
+
+  static Future<bool> deleteStudent(int id) async{
+    try{
+      final response = await http.delete(
+        Uri.parse('$baseUrl/deleteuser/$id'),
+      );
+
+      return response.statusCode == 200;
+
+    }catch (e){
+      print("Student delete error: $e");
+      return false;
+    }
+  }
+
+
+
 }

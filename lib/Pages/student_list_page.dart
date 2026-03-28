@@ -3,6 +3,8 @@ import 'package:student_manager/Models/student_model.dart';
 import 'package:student_manager/Services/api_service.dart';
 
 class StudentListScreen extends StatefulWidget {
+  const StudentListScreen({super.key});
+
   @override
   _StudentListScreenState createState() => _StudentListScreenState();
 }
